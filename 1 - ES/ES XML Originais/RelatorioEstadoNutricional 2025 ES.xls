@@ -1,0 +1,1767 @@
+<html xmlns:x="urn:schemas-microsoft-com:office:excel">
+			<head>
+				<!--[if gte mso 9]>
+				<xml>
+					<x:ExcelWorkbook>
+						<x:ExcelWorksheets>
+							<x:ExcelWorksheet>
+								<x:Name>Relatório</x:Name>
+								<x:WorksheetOptions>
+									<x:Print>
+										<x:ValidPrinterInfo/>
+									</x:Print>
+								</x:WorksheetOptions>
+							</x:ExcelWorksheet>
+						</x:ExcelWorksheets>
+					</x:ExcelWorkbook>
+				</xml>
+				<![endif]-->
+			</head><!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>SISVAN - Relatórios de Produção</title>
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+    <link href="/sisvan/public/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="/sisvan/public/css/font-awesome-4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/x-icon"  href="https://sisaps.saude.gov.br/sisvan/public/img/favicon.ico" />
+    <link href="/sisvan/public/css/ionicons-2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css" />
+    <link href="/sisvan/public/css/AdminLTE.min.css" rel="stylesheet" type="text/css" />
+    <link href="/sisvan/public/css/alteraTemplate.css" rel="stylesheet" type="text/css" />
+    <link href="/sisvan/public/css/skins/skin-green.css" rel="stylesheet" type="text/css" />
+    <link href="/sisvan/public/css/jquery.steps.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css"/>
+    <link href="/sisvan/public/css/dataTables.bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="/sisvan/public/css/bootstrap-select.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="/sisvan/public/css/loading-bar.css" media="all" />
+
+    <!--iCHECK CSS-->
+    <link href="/sisvan/public/csscss/icheck/minimal/green.css" rel="stylesheet">
+
+    <script type="text/javascript" src="/sisvan/public/js/plugins/jQuery/jQuery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="/sisvan/public/js/jquery.mask.js"></script>
+    <script src="/sisvan/public/js/angular/angular.js"></script>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <script type="text/javascript">
+    </script>
+
+    <style>
+        [ng\: cloak
+
+        ]
+        ,
+        [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x- ng-cloak {
+            display: none !important;
+        }
+    </style>
+</head>
+<body class="hold-transition skin-green layout-top-nav">
+<div class="wrapper">
+    <header class="main-header">
+        <nav class="navbar navbar-static-top" >
+            <!--            <div class="container">-->
+            <!--a class="navbar-brand"><b>SISVAN</b> Relatórios</a-->
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" onclick="javascrit:window.close()">
+                <i class="fa fa-close"></i>
+            </button>
+            <!--            </div>-->
+        </nav>
+    </header>
+<section class="content-wrapper">
+    <div class="content-header">
+        <h1>
+            Relat&oacute;rios P&uacute;blicos
+        </h1>
+    </div>
+    <div class="content">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box box-success">
+                                        <div class="box-body">
+                        <strong>Relat&oacute;rios do Estado nutricional dos indiv&iacute;duos acompanhados por per&iacute;odo, fase do ciclo da vida e &iacute;ndice</strong><br />
+                        <strong>Ano:</strong>  2025 - <strong>M&ecirc;s:</strong> TODOS<br />
+                        <strong>Fase da Vida:</strong> ADULTO<br />                         <strong>Sexo:</strong> TODOS<br />                                                                                                                     </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box box-default">
+                                        <div class="box-body" align="center">
+                    
+                        <table style="text-align: center" class="table table-striped table-bordered display table-responsive" border="1px" id="relatorio">
+                            <thead>
+                            <tr>
+                                <th colspan="18" style="font-size: medium; color:#7e7e7e; text-align: center" >IMC</th>
+                            </tr>
+                            
+                                <th rowspan="2" width="5%" style="text-align: center">Regi&atilde;o</th>
+                                <th rowspan="2" width="2%" style="text-align: center">C&oacute;digo UF</th>
+                                <th rowspan="2" width="2%" style="text-align: center">UF</th>
+                                <th rowspan="2" width="5%" style="text-align: center">C&oacute;digo IBGE</th>
+                                <th rowspan="2" width="15%">Munic&iacute;pio</th>
+                                <th colspan="2" width="7%" style="text-align: center">Baixo peso</th>
+                                <th colspan="2" width="7%" style="text-align: center">Adequado<br>ou Eutr&oacute;fico</th>
+                                <th colspan="2" width="7%" style="text-align: center">Sobrepeso</th>
+                                <th colspan="2" width="7%" style="text-align: center">Obesidade Grau I</th>                      
+                                <th colspan="2" width="7%" style="text-align: center">Obesidade Grau II</th>                
+                                <th colspan="2" width="7%" style="text-align: center">Obesidade Grau III</th>
+                                <th rowspan="2" width="5%" style="text-align: center">Total</th>
+                            </tr>
+                            <tr>
+                                <th style="text-align: center" width="5%">Quantidade</th>
+                                <th style="text-align: center" width="2%">%</th>
+                                <th style="text-align: center" width="5%">Quantidade</th>
+                                <th style="text-align: center" width="2%">%</th>
+                                <th style="text-align: center" width="5%">Quantidade</th>
+                                <th style="text-align: center" width="2%">%</th>
+                                <th style="text-align: center" width="5%">Quantidade</th>
+                                <th style="text-align: center" width="2%">%</th>  
+                                <th style="text-align: center" width="5%">Quantidade</th>
+                                <th style="text-align: center" width="2%">%</th>  
+                                <th style="text-align: center" width="5%">Quantidade</th>
+                                <th style="text-align: center" width="2%">%</th>  
+                            </tr>
+                                
+                            </thead>
+                            <tbody>
+
+                                                                                        <tr>                                                                    <td style="text-align: left">SUDESTE</td>
+                                                                    <td style="text-align: left">32</td>
+                                                                    <td style="text-align: left">ES</td>
+                                                                    <td style="text-align: left">320010</td>
+                                                                    <td align="left">AFONSO CLAUDIO</td>
+                                                                                                                                    <td>33</td>
+                                                                <td>1.35%</td>
+                                                                <td>682</td>
+                                                                <td>27.89%</td>
+                                                                <td>866</td>
+                                                                <td>35.42%</td>
+                                                                                                                                    <td>536</td>
+                                                                    <td>21.92%</td>
+                                                                                                                                                                                                    <td>222</td>
+                                                                    <td>9.08%</td>
+                                                                                                                                                                                                    <td>106</td>
+                                                                    <td>4.34%</td>
+                                                                                                                                <td>2.445</td>
+                                                            </tr>
+                                                                                                                        <tr>                                                                    <td style="text-align: left">SUDESTE</td>
+                                                                    <td style="text-align: left">32</td>
+                                                                    <td style="text-align: left">ES</td>
+                                                                    <td style="text-align: left">320016</td>
+                                                                    <td align="left">AGUA DOCE DO NORTE</td>
+                                                                                                                                    <td>55</td>
+                                                                <td>1.7%</td>
+                                                                <td>987</td>
+                                                                <td>30.57%</td>
+                                                                <td>1.081</td>
+                                                                <td>33.48%</td>
+                                                                                                                                    <td>682</td>
+                                                                    <td>21.12%</td>
+                                                                                                                                                                                                    <td>259</td>
+                                                                    <td>8.02%</td>
+                                                                                                                                                                                                    <td>165</td>
+                                                                    <td>5.11%</td>
+                                                                                                                                <td>3.229</td>
+                                                            </tr>
+                                                                                                                        <tr>                                                                    <td style="text-align: left">SUDESTE</td>
+                                                                    <td style="text-align: left">32</td>
+                                                                    <td style="text-align: left">ES</td>
+                                                                    <td style="text-align: left">320013</td>
+                                                                    <td align="left">AGUIA BRANCA</td>
+                                                                                                                                    <td>8</td>
+                                                                <td>1.72%</td>
+                                                                <td>115</td>
+                                                                <td>24.68%</td>
+                                                                <td>150</td>
+                                                                <td>32.19%</td>
+                                                                                                                                    <td>110</td>
+                                                                    <td>23.61%</td>
+                                                                                                                                                                                                    <td>53</td>
+                                                                    <td>11.37%</td>
+                                                                                                                                                                                                    <td>30</td>
+                                                                    <td>6.44%</td>
+                                                                                                                                <td>466</td>
+                                                            </tr>
+                                                                                                                        <tr>                                                                    <td style="text-align: left">SUDESTE</td>
+                                                                    <td style="text-align: left">32</td>
+                                                                    <td style="text-align: left">ES</td>
+                                                                    <td style="text-align: left">320020</td>
+                                                                    <td align="left">ALEGRE</td>
+                                                                                                                                    <td>32</td>
+                                                                <td>2.01%</td>
+                                                                <td>374</td>
+                                                                <td>23.51%</td>
+                                                                <td>497</td>
+                                                                <td>31.24%</td>
+                                                                                                                                    <td>390</td>
+                                                                    <td>24.51%</td>
+                                                                                                                                                                                                    <td>185</td>
+                                                                    <td>11.63%</td>
+                                                                                                                                                                                                    <td>113</td>
+                                                                    <td>7.1%</td>
+                                                                                                                                <td>1.591</td>
+                                                            </tr>
+                                                                                                                        <tr>                                                                    <td style="text-align: left">SUDESTE</td>
+                                                                    <td style="text-align: left">32</td>
+                                                                    <td style="text-align: left">ES</td>
+                                                                    <td style="text-align: left">320030</td>
+                                                                    <td align="left">ALFREDO CHAVES</td>
+                                                                                                                                    <td>83</td>
+                                                                <td>1.52%</td>
+                                                                <td>1.866</td>
+                                                                <td>34.18%</td>
+                                                                <td>1.963</td>
+                                                                <td>35.95%</td>
+                                                                                                                                    <td>1.044</td>
+                                                                    <td>19.12%</td>
+                                                                                                                                                                                                    <td>347</td>
+                                                                    <td>6.36%</td>
+                                                                                                                                                                                                    <td>157</td>
+                                                                    <td>2.88%</td>
+                                                                                                                                <td>5.460</td>
+                                                            </tr>
+                                                                                                                        <tr>                                                                    <td style="text-align: left">SUDESTE</td>
+                                                                    <td style="text-align: left">32</td>
+                                                                    <td style="text-align: left">ES</td>
+                                                                    <td style="text-align: left">320035</td>
+                                                                    <td align="left">ALTO RIO NOVO</td>
+                                                                                                                                    <td>11</td>
+                                                                <td>1.87%</td>
+                                                                <td>171</td>
+                                                                <td>29.13%</td>
+                                                                <td>214</td>
+                                                                <td>36.46%</td>
+                                                                                                                                    <td>111</td>
+                                                                    <td>18.91%</td>
+                                                                                                                                                                                                    <td>55</td>
+                                                                    <td>9.37%</td>
+                                                                                                                                                                                                    <td>25</td>
+                                                                    <td>4.26%</td>
+                                                                                                                                <td>587</td>
+                                                            </tr>
+                                                                                                                        <tr>                                                                    <td style="text-align: left">SUDESTE</td>
+                                                                    <td style="text-align: left">32</td>
+                                                                    <td style="text-align: left">ES</td>
+                                                                    <td style="text-align: left">320040</td>
+                                                                    <td align="left">ANCHIETA</td>
+                                                                                                                                    <td>20</td>
+                                                                <td>1.11%</td>
+                                                                <td>410</td>
+                                                                <td>22.82%</td>
+                                                                <td>587</td>
+                                                                <td>32.67%</td>
+                                                                                                                                    <td>442</td>
+                                                                    <td>24.6%</td>
+                                                                                                                                                                                                    <td>208</td>
+                                                                    <td>11.57%</td>
+                                                                                                                                                                                                    <td>130</td>
+                                                                    <td>7.23%</td>
+                                                                                                                                <td>1.797</td>
+                                                            </tr>
+                                                                                                                        <tr>                                                                    <td style="text-align: left">SUDESTE</td>
+                                                                    <td style="text-align: left">32</td>
+                                                                    <td style="text-align: left">ES</td>
+                                                                    <td style="text-align: left">320050</td>
+                                                                    <td align="left">APIACA</td>
+                                                                                                                                    <td>27</td>
+                                                                <td>1.79%</td>
+                                                                <td>460</td>
+                                                                <td>30.5%</td>
+                                                                <td>552</td>
+                                                                <td>36.6%</td>
+                                                                                                                                    <td>284</td>
+                                                                    <td>18.83%</td>
+                                                                                                                                                                                                    <td>120</td>
+                                                                    <td>7.96%</td>
+                                                                                                                                                                                                    <td>65</td>
+                                                                    <td>4.31%</td>
+                                                                                                                                <td>1.508</td>
+                                                            </tr>
+                                                                                                                        <tr>                                                                    <td style="text-align: left">SUDESTE</td>
+                                                                    <td style="text-align: left">32</td>
+                                                                    <td style="text-align: left">ES</td>
+                                                                    <td style="text-align: left">320060</td>
+                                                                    <td align="left">ARACRUZ</td>
+                                                                                                                                    <td>342</td>
+                                                                <td>1.56%</td>
+                                                                <td>5.740</td>
+                                                                <td>26.23%</td>
+                                                                <td>7.500</td>
+                                                                <td>34.27%</td>
+                                                                                                                                    <td>5.034</td>
+                                                                    <td>23.01%</td>
+                                                                                                                                                                                                    <td>2.186</td>
+                                                                    <td>9.99%</td>
+                                                                                                                                                                                                    <td>1.080</td>
+                                                                    <td>4.94%</td>
+                                                                                                                                <td>21.882</td>
+                                                            </tr>
+                                                                                                                        <tr>                                                                    <td style="text-align: left">SUDESTE</td>
+                                                                    <td style="text-align: left">32</td>
+                                                                    <td style="text-align: left">ES</td>
+                                                                    <td style="text-align: left">320070</td>
+                                                                    <td align="left">ATILIO VIVACQUA</td>
+                                                                                                                                    <td>36</td>
+                                                                <td>1.24%</td>
+                                                                <td>730</td>
+                                                                <td>25.11%</td>
+                                                                <td>1.020</td>
+                                                                <td>35.09%</td>
+                                                                                                                                    <td>652</td>
+                                                                    <td>22.43%</td>
+                                                                                                                                                                                                    <td>285</td>
+                                                                    <td>9.8%</td>
+                                                                                                                                                                                                    <td>184</td>
+                                                                    <td>6.33%</td>
+                                                                                                                                <td>2.907</td>
+                                                            </tr>
+                                                                                                                        <tr>                                                                    <td style="text-align: left">SUDESTE</td>
+                                                                    <td style="text-align: left">32</td>
+                                                                    <td style="text-align: left">ES</td>
+                                                                    <td style="text-align: left">320080</td>
+                                                                    <td align="left">BAIXO GUANDU</td>
+                                                                                                                                    <td>36</td>
+                                                                <td>1.55%</td>
+                                                                <td>593</td>
+                                                                <td>25.53%</td>
+                                                                <td>749</td>
+                                                                <td>32.24%</td>
+                                                                                                                                    <td>551</td>
+                                                                    <td>23.72%</td>
+                                                                                                                                                                                                    <td>245</td>
+                                                                    <td>10.55%</td>
+                                                                                                                                                                                                    <td>149</td>
+                                                                    <td>6.41%</td>
+                                                                                                                                <td>2.323</td>
+                                                            </tr>
+                                                                                                                        <tr>                                                                    <td style="text-align: left">SUDESTE</td>
+                                                                    <td style="text-align: left">32</td>
+                                                                    <td style="text-align: left">ES</td>
+                                                                    <td style="text-align: left">320090</td>
+                                                                    <td align="left">BARRA DE SAO FRANCISCO</td>
+                                                                                                                                    <td>22</td>
+                                                                <td>2.53%</td>
+                                                                <td>233</td>
+                                                                <td>26.75%</td>
+                                                                <td>268</td>
+                                                                <td>30.77%</td>
+                                                                                                                                    <td>210</td>
+                                                                    <td>24.11%</td>
+                                                                                                                                                                                                    <td>88</td>
+                                                                    <td>10.1%</td>
+                                                                                                                                                                                                    <td>50</td>
+                                                                    <td>5.74%</td>
+                                                                                                                                <td>871</td>
+                                                            </tr>
+                                                                                                                        <tr>                                                                    <td style="text-align: left">SUDESTE</td>
+                                                                    <td style="text-align: left">32</td>
+                                                                    <td style="text-align: left">ES</td>
+                                                                    <td style="text-align: left">320100</td>
+                                                                    <td align="left">BOA ESPERANCA</td>
+                                                                                                                                    <td>66</td>
+                                                                <td>1.62%</td>
+                                                                <td>1.194</td>
+                                                                <td>29.32%</td>
+                                                                <td>1.401</td>
+                                                                <td>34.41%</td>
+                                                                                                                                    <td>860</td>
+                                                                    <td>21.12%</td>
+                                                                                                                                                                                                    <td>347</td>
+                                                                    <td>8.52%</td>
+                                                                                                                                                                                                    <td>204</td>
+                                                                    <td>5.01%</td>
+                                                                                                                                <td>4.072</td>
+                                                            </tr>
+                                                                                                                        <tr>                                                                    <td style="text-align: left">SUDESTE</td>
+                                                                    <td style="text-align: left">32</td>
+                                                                    <td style="text-align: left">ES</td>
+                                                                    <td style="text-align: left">320110</td>
+                                                                    <td align="left">BOM JESUS DO NORTE</td>
+                                                                                                                                    <td>23</td>
+                                                                <td>3.31%</td>
+                                                                <td>170</td>
+                                                                <td>24.46%</td>
+                                                                <td>225</td>
+                                                                <td>32.37%</td>
+                                                                                                                                    <td>167</td>
+                                                                    <td>24.03%</td>
+                                                                                                                                                                                                    <td>69</td>
+                                                                    <td>9.93%</td>
+                                                                                                                                                                                                    <td>41</td>
+                                                                    <td>5.9%</td>
+                                                                                                                                <td>695</td>
+                                                            </tr>
+                                                                                                                        <tr>                                                                    <td style="text-align: left">SUDESTE</td>
+                                                                    <td style="text-align: left">32</td>
+                                                                    <td style="text-align: left">ES</td>
+                                                                    <td style="text-align: left">320115</td>
+                                                                    <td align="left">BREJETUBA</td>
+                                                                                                                                    <td>5</td>
+                                                                <td>1.92%</td>
+                                                                <td>66</td>
+                                                                <td>25.29%</td>
+                                                                <td>73</td>
+                                                                <td>27.97%</td>
+                                                                                                                                    <td>53</td>
+                                                                    <td>20.31%</td>
+                                                                                                                                                                                                    <td>34</td>
+                                                                    <td>13.03%</td>
+                                                                                                                                                                                                    <td>30</td>
+                                                                    <td>11.49%</td>
+                                                                                                                                <td>261</td>
+                                                            </tr>
+                                                                                                                        <tr>                                                                    <td style="text-align: left">SUDESTE</td>
+                                                                    <td style="text-align: left">32</td>
+                                                                    <td style="text-align: left">ES</td>
+                                                                    <td style="text-align: left">320120</td>
+                                                                    <td align="left">CACHOEIRO DE ITAPEMIRIM</td>
+                                                                                                                                    <td>613</td>
+                                                                <td>1.89%</td>
+                                                                <td>8.102</td>
+                                                                <td>25%</td>
+                                                                <td>10.358</td>
+                                                                <td>31.96%</td>
+                                                                                                                                    <td>7.562</td>
+                                                                    <td>23.33%</td>
+                                                                                                                                                                                                    <td>3.579</td>
+                                                                    <td>11.04%</td>
+                                                                                                                                                                                                    <td>2.198</td>
+                                                                    <td>6.78%</td>
+                                                                                                                                <td>32.412</td>
+                                                            </tr>
+                                                                                                                        <tr>                                                                    <td style="text-align: left">SUDESTE</td>
+                                                                    <td style="text-align: left">32</td>
+                                                                    <td style="text-align: left">ES</td>
+                                                                    <td style="text-align: left">320130</td>
+                                                                    <td align="left">CARIACICA</td>
+                                                                                                                                    <td>1.088</td>
+                                                                <td>2.17%</td>
+                                                                <td>12.332</td>
+                                                                <td>24.56%</td>
+                                                                <td>15.941</td>
+                                                                <td>31.75%</td>
+                                                                                                                                    <td>11.773</td>
+                                                                    <td>23.45%</td>
+                                                                                                                                                                                                    <td>5.621</td>
+                                                                    <td>11.19%</td>
+                                                                                                                                                                                                    <td>3.458</td>
+                                                                    <td>6.89%</td>
+                                                                                                                                <td>50.213</td>
+                                                            </tr>
+                                                                                                                        <tr>                                                                    <td style="text-align: left">SUDESTE</td>
+                                                                    <td style="text-align: left">32</td>
+                                                                    <td style="text-align: left">ES</td>
+                                                                    <td style="text-align: left">320140</td>
+                                                                    <td align="left">CASTELO</td>
+                                                                                                                                    <td>19</td>
+                                                                <td>1.28%</td>
+                                                                <td>293</td>
+                                                                <td>19.68%</td>
+                                                                <td>452</td>
+                                                                <td>30.36%</td>
+                                                                                                                                    <td>388</td>
+                                                                    <td>26.06%</td>
+                                                                                                                                                                                                    <td>189</td>
+                                                                    <td>12.69%</td>
+                                                                                                                                                                                                    <td>148</td>
+                                                                    <td>9.94%</td>
+                                                                                                                                <td>1.489</td>
+                                                            </tr>
+                                                                                                                        <tr>                                                                    <td style="text-align: left">SUDESTE</td>
+                                                                    <td style="text-align: left">32</td>
+                                                                    <td style="text-align: left">ES</td>
+                                                                    <td style="text-align: left">320150</td>
+                                                                    <td align="left">COLATINA</td>
+                                                                                                                                    <td>200</td>
+                                                                <td>1.67%</td>
+                                                                <td>2.959</td>
+                                                                <td>24.63%</td>
+                                                                <td>3.811</td>
+                                                                <td>31.73%</td>
+                                                                                                                                    <td>2.731</td>
+                                                                    <td>22.74%</td>
+                                                                                                                                                                                                    <td>1.421</td>
+                                                                    <td>11.83%</td>
+                                                                                                                                                                                                    <td>890</td>
+                                                                    <td>7.41%</td>
+                                                                                                                                <td>12.012</td>
+                                                            </tr>
+                                                                                                                        <tr>                                                                    <td style="text-align: left">SUDESTE</td>
+                                                                    <td style="text-align: left">32</td>
+                                                                    <td style="text-align: left">ES</td>
+                                                                    <td style="text-align: left">320160</td>
+                                                                    <td align="left">CONCEICAO DA BARRA</td>
+                                                                                                                                    <td>33</td>
+                                                                <td>1.11%</td>
+                                                                <td>620</td>
+                                                                <td>20.83%</td>
+                                                                <td>970</td>
+                                                                <td>32.59%</td>
+                                                                                                                                    <td>765</td>
+                                                                    <td>25.71%</td>
+                                                                                                                                                                                                    <td>377</td>
+                                                                    <td>12.67%</td>
+                                                                                                                                                                                                    <td>211</td>
+                                                                    <td>7.09%</td>
+                                                                                                                                <td>2.976</td>
+                                                            </tr>
+                                                                                                                        <tr>                                                                    <td style="text-align: left">SUDESTE</td>
+                                                                    <td style="text-align: left">32</td>
+                                                                    <td style="text-align: left">ES</td>
+                                                                    <td style="text-align: left">320170</td>
+                                                                    <td align="left">CONCEICAO DO CASTELO</td>
+                                                                                                                                    <td>8</td>
+                                                                <td>1.03%</td>
+                                                                <td>184</td>
+                                                                <td>23.8%</td>
+                                                                <td>247</td>
+                                                                <td>31.95%</td>
+                                                                                                                                    <td>184</td>
+                                                                    <td>23.8%</td>
+                                                                                                                                                                                                    <td>95</td>
+                                                                    <td>12.29%</td>
+                                                                                                                                                                                                    <td>55</td>
+                                                                    <td>7.12%</td>
+                                                                                                                                <td>773</td>
+                                                            </tr>
+                                                                                                                        <tr>                                                                    <td style="text-align: left">SUDESTE</td>
+                                                                    <td style="text-align: left">32</td>
+                                                                    <td style="text-align: left">ES</td>
+                                                                    <td style="text-align: left">320180</td>
+                                                                    <td align="left">DIVINO DE SAO LOURENCO</td>
+                                                                                                                                    <td>3</td>
+                                                                <td>1.64%</td>
+                                                                <td>52</td>
+                                                                <td>28.42%</td>
+                                                                <td>52</td>
+                                                                <td>28.42%</td>
+                                                                                                                                    <td>37</td>
+                                                                    <td>20.22%</td>
+                                                                                                                                                                                                    <td>32</td>
+                                                                    <td>17.49%</td>
+                                                                                                                                                                                                    <td>7</td>
+                                                                    <td>3.83%</td>
+                                                                                                                                <td>183</td>
+                                                            </tr>
+                                                                                                                        <tr>                                                                    <td style="text-align: left">SUDESTE</td>
+                                                                    <td style="text-align: left">32</td>
+                                                                    <td style="text-align: left">ES</td>
+                                                                    <td style="text-align: left">320190</td>
+                                                                    <td align="left">DOMINGOS MARTINS</td>
+                                                                                                                                    <td>132</td>
+                                                                <td>1.19%</td>
+                                                                <td>3.449</td>
+                                                                <td>31.14%</td>
+                                                                <td>4.055</td>
+                                                                <td>36.61%</td>
+                                                                                                                                    <td>2.260</td>
+                                                                    <td>20.4%</td>
+                                                                                                                                                                                                    <td>798</td>
+                                                                    <td>7.2%</td>
+                                                                                                                                                                                                    <td>383</td>
+                                                                    <td>3.46%</td>
+                                                                                                                                <td>11.077</td>
+                                                            </tr>
+                                                                                                                        <tr>                                                                    <td style="text-align: left">SUDESTE</td>
+                                                                    <td style="text-align: left">32</td>
+                                                                    <td style="text-align: left">ES</td>
+                                                                    <td style="text-align: left">320200</td>
+                                                                    <td align="left">DORES DO RIO PRETO</td>
+                                                                                                                                    <td>24</td>
+                                                                <td>1.95%</td>
+                                                                <td>395</td>
+                                                                <td>32.14%</td>
+                                                                <td>438</td>
+                                                                <td>35.64%</td>
+                                                                                                                                    <td>231</td>
+                                                                    <td>18.8%</td>
+                                                                                                                                                                                                    <td>91</td>
+                                                                    <td>7.4%</td>
+                                                                                                                                                                                                    <td>50</td>
+                                                                    <td>4.07%</td>
+                                                                                                                                <td>1.229</td>
+                                                            </tr>
+                                                                                                                        <tr>                                                                    <td style="text-align: left">SUDESTE</td>
+                                                                    <td style="text-align: left">32</td>
+                                                                    <td style="text-align: left">ES</td>
+                                                                    <td style="text-align: left">320210</td>
+                                                                    <td align="left">ECOPORANGA</td>
+                                                                                                                                    <td>7</td>
+                                                                <td>1.59%</td>
+                                                                <td>112</td>
+                                                                <td>25.4%</td>
+                                                                <td>147</td>
+                                                                <td>33.33%</td>
+                                                                                                                                    <td>104</td>
+                                                                    <td>23.58%</td>
+                                                                                                                                                                                                    <td>45</td>
+                                                                    <td>10.2%</td>
+                                                                                                                                                                                                    <td>26</td>
+                                                                    <td>5.9%</td>
+                                                                                                                                <td>441</td>
+                                                            </tr>
+                                                                                                                        <tr>                                                                    <td style="text-align: left">SUDESTE</td>
+                                                                    <td style="text-align: left">32</td>
+                                                                    <td style="text-align: left">ES</td>
+                                                                    <td style="text-align: left">320220</td>
+                                                                    <td align="left">FUNDAO</td>
+                                                                                                                                    <td>40</td>
+                                                                <td>1.58%</td>
+                                                                <td>600</td>
+                                                                <td>23.7%</td>
+                                                                <td>835</td>
+                                                                <td>32.98%</td>
+                                                                                                                                    <td>587</td>
+                                                                    <td>23.18%</td>
+                                                                                                                                                                                                    <td>284</td>
+                                                                    <td>11.22%</td>
+                                                                                                                                                                                                    <td>186</td>
+                                                                    <td>7.35%</td>
+                                                                                                                                <td>2.532</td>
+                                                            </tr>
+                                                                                                                        <tr>                                                                    <td style="text-align: left">SUDESTE</td>
+                                                                    <td style="text-align: left">32</td>
+                                                                    <td style="text-align: left">ES</td>
+                                                                    <td style="text-align: left">320225</td>
+                                                                    <td align="left">GOVERNADOR LINDENBERG</td>
+                                                                                                                                    <td>21</td>
+                                                                <td>1.17%</td>
+                                                                <td>372</td>
+                                                                <td>20.74%</td>
+                                                                <td>565</td>
+                                                                <td>31.49%</td>
+                                                                                                                                    <td>463</td>
+                                                                    <td>25.81%</td>
+                                                                                                                                                                                                    <td>231</td>
+                                                                    <td>12.88%</td>
+                                                                                                                                                                                                    <td>142</td>
+                                                                    <td>7.92%</td>
+                                                                                                                                <td>1.794</td>
+                                                            </tr>
+                                                                                                                        <tr>                                                                    <td style="text-align: left">SUDESTE</td>
+                                                                    <td style="text-align: left">32</td>
+                                                                    <td style="text-align: left">ES</td>
+                                                                    <td style="text-align: left">320230</td>
+                                                                    <td align="left">GUACUI</td>
+                                                                                                                                    <td>27</td>
+                                                                <td>2.55%</td>
+                                                                <td>292</td>
+                                                                <td>27.6%</td>
+                                                                <td>324</td>
+                                                                <td>30.62%</td>
+                                                                                                                                    <td>242</td>
+                                                                    <td>22.87%</td>
+                                                                                                                                                                                                    <td>112</td>
+                                                                    <td>10.59%</td>
+                                                                                                                                                                                                    <td>61</td>
+                                                                    <td>5.77%</td>
+                                                                                                                                <td>1.058</td>
+                                                            </tr>
+                                                                                                                        <tr>                                                                    <td style="text-align: left">SUDESTE</td>
+                                                                    <td style="text-align: left">32</td>
+                                                                    <td style="text-align: left">ES</td>
+                                                                    <td style="text-align: left">320240</td>
+                                                                    <td align="left">GUARAPARI</td>
+                                                                                                                                    <td>61</td>
+                                                                <td>2.08%</td>
+                                                                <td>668</td>
+                                                                <td>22.74%</td>
+                                                                <td>940</td>
+                                                                <td>32.01%</td>
+                                                                                                                                    <td>713</td>
+                                                                    <td>24.28%</td>
+                                                                                                                                                                                                    <td>343</td>
+                                                                    <td>11.68%</td>
+                                                                                                                                                                                                    <td>212</td>
+                                                                    <td>7.22%</td>
+                                                                                                                                <td>2.937</td>
+                                                            </tr>
+                                                                                                                        <tr>                                                                    <td style="text-align: left">SUDESTE</td>
+                                                                    <td style="text-align: left">32</td>
+                                                                    <td style="text-align: left">ES</td>
+                                                                    <td style="text-align: left">320245</td>
+                                                                    <td align="left">IBATIBA</td>
+                                                                                                                                    <td>23</td>
+                                                                <td>1.05%</td>
+                                                                <td>509</td>
+                                                                <td>23.32%</td>
+                                                                <td>738</td>
+                                                                <td>33.81%</td>
+                                                                                                                                    <td>523</td>
+                                                                    <td>23.96%</td>
+                                                                                                                                                                                                    <td>237</td>
+                                                                    <td>10.86%</td>
+                                                                                                                                                                                                    <td>153</td>
+                                                                    <td>7.01%</td>
+                                                                                                                                <td>2.183</td>
+                                                            </tr>
+                                                                                                                        <tr>                                                                    <td style="text-align: left">SUDESTE</td>
+                                                                    <td style="text-align: left">32</td>
+                                                                    <td style="text-align: left">ES</td>
+                                                                    <td style="text-align: left">320250</td>
+                                                                    <td align="left">IBIRACU</td>
+                                                                                                                                    <td>2</td>
+                                                                <td>1.4%</td>
+                                                                <td>47</td>
+                                                                <td>32.87%</td>
+                                                                <td>41</td>
+                                                                <td>28.67%</td>
+                                                                                                                                    <td>33</td>
+                                                                    <td>23.08%</td>
+                                                                                                                                                                                                    <td>13</td>
+                                                                    <td>9.09%</td>
+                                                                                                                                                                                                    <td>7</td>
+                                                                    <td>4.9%</td>
+                                                                                                                                <td>143</td>
+                                                            </tr>
+                                                                                                                        <tr>                                                                    <td style="text-align: left">SUDESTE</td>
+                                                                    <td style="text-align: left">32</td>
+                                                                    <td style="text-align: left">ES</td>
+                                                                    <td style="text-align: left">320255</td>
+                                                                    <td align="left">IBITIRAMA</td>
+                                                                                                                                    <td>18</td>
+                                                                <td>1.57%</td>
+                                                                <td>343</td>
+                                                                <td>29.88%</td>
+                                                                <td>403</td>
+                                                                <td>35.1%</td>
+                                                                                                                                    <td>258</td>
+                                                                    <td>22.47%</td>
+                                                                                                                                                                                                    <td>85</td>
+                                                                    <td>7.4%</td>
+                                                                                                                                                                                                    <td>41</td>
+                                                                    <td>3.57%</td>
+                                                                                                                                <td>1.148</td>
+                                                            </tr>
+                                                                                                                        <tr>                                                                    <td style="text-align: left">SUDESTE</td>
+                                                                    <td style="text-align: left">32</td>
+                                                                    <td style="text-align: left">ES</td>
+                                                                    <td style="text-align: left">320260</td>
+                                                                    <td align="left">ICONHA</td>
+                                                                                                                                    <td>7</td>
+                                                                <td>1.42%</td>
+                                                                <td>124</td>
+                                                                <td>25.1%</td>
+                                                                <td>163</td>
+                                                                <td>33%</td>
+                                                                                                                                    <td>113</td>
+                                                                    <td>22.87%</td>
+                                                                                                                                                                                                    <td>57</td>
+                                                                    <td>11.54%</td>
+                                                                                                                                                                                                    <td>30</td>
+                                                                    <td>6.07%</td>
+                                                                                                                                <td>494</td>
+                                                            </tr>
+                                                                                                                        <tr>                                                                    <td style="text-align: left">SUDESTE</td>
+                                                                    <td style="text-align: left">32</td>
+                                                                    <td style="text-align: left">ES</td>
+                                                                    <td style="text-align: left">320265</td>
+                                                                    <td align="left">IRUPI</td>
+                                                                                                                                    <td>18</td>
+                                                                <td>2.37%</td>
+                                                                <td>207</td>
+                                                                <td>27.2%</td>
+                                                                <td>234</td>
+                                                                <td>30.75%</td>
+                                                                                                                                    <td>179</td>
+                                                                    <td>23.52%</td>
+                                                                                                                                                                                                    <td>84</td>
+                                                                    <td>11.04%</td>
+                                                                                                                                                                                                    <td>39</td>
+                                                                    <td>5.12%</td>
+                                                                                                                                <td>761</td>
+                                                            </tr>
+                                                                                                                        <tr>                                                                    <td style="text-align: left">SUDESTE</td>
+                                                                    <td style="text-align: left">32</td>
+                                                                    <td style="text-align: left">ES</td>
+                                                                    <td style="text-align: left">320270</td>
+                                                                    <td align="left">ITAGUACU</td>
+                                                                                                                                    <td>16</td>
+                                                                <td>1.36%</td>
+                                                                <td>307</td>
+                                                                <td>26.02%</td>
+                                                                <td>383</td>
+                                                                <td>32.46%</td>
+                                                                                                                                    <td>282</td>
+                                                                    <td>23.9%</td>
+                                                                                                                                                                                                    <td>125</td>
+                                                                    <td>10.59%</td>
+                                                                                                                                                                                                    <td>67</td>
+                                                                    <td>5.68%</td>
+                                                                                                                                <td>1.180</td>
+                                                            </tr>
+                                                                                                                        <tr>                                                                    <td style="text-align: left">SUDESTE</td>
+                                                                    <td style="text-align: left">32</td>
+                                                                    <td style="text-align: left">ES</td>
+                                                                    <td style="text-align: left">320280</td>
+                                                                    <td align="left">ITAPEMIRIM</td>
+                                                                                                                                    <td>9</td>
+                                                                <td>0.79%</td>
+                                                                <td>223</td>
+                                                                <td>19.53%</td>
+                                                                <td>358</td>
+                                                                <td>31.35%</td>
+                                                                                                                                    <td>303</td>
+                                                                    <td>26.53%</td>
+                                                                                                                                                                                                    <td>136</td>
+                                                                    <td>11.91%</td>
+                                                                                                                                                                                                    <td>113</td>
+                                                                    <td>9.89%</td>
+                                                                                                                                <td>1.142</td>
+                                                            </tr>
+                                                                                                                        <tr>                                                                    <td style="text-align: left">SUDESTE</td>
+                                                                    <td style="text-align: left">32</td>
+                                                                    <td style="text-align: left">ES</td>
+                                                                    <td style="text-align: left">320290</td>
+                                                                    <td align="left">ITARANA</td>
+                                                                                                                                    <td>7</td>
+                                                                <td>0.74%</td>
+                                                                <td>240</td>
+                                                                <td>25.21%</td>
+                                                                <td>312</td>
+                                                                <td>32.77%</td>
+                                                                                                                                    <td>232</td>
+                                                                    <td>24.37%</td>
+                                                                                                                                                                                                    <td>115</td>
+                                                                    <td>12.08%</td>
+                                                                                                                                                                                                    <td>46</td>
+                                                                    <td>4.83%</td>
+                                                                                                                                <td>952</td>
+                                                            </tr>
+                                                                                                                        <tr>                                                                    <td style="text-align: left">SUDESTE</td>
+                                                                    <td style="text-align: left">32</td>
+                                                                    <td style="text-align: left">ES</td>
+                                                                    <td style="text-align: left">320300</td>
+                                                                    <td align="left">IUNA</td>
+                                                                                                                                    <td>13</td>
+                                                                <td>2.02%</td>
+                                                                <td>137</td>
+                                                                <td>21.31%</td>
+                                                                <td>207</td>
+                                                                <td>32.19%</td>
+                                                                                                                                    <td>166</td>
+                                                                    <td>25.82%</td>
+                                                                                                                                                                                                    <td>80</td>
+                                                                    <td>12.44%</td>
+                                                                                                                                                                                                    <td>40</td>
+                                                                    <td>6.22%</td>
+                                                                                                                                <td>643</td>
+                                                            </tr>
+                                                                                                                        <tr>                                                                    <td style="text-align: left">SUDESTE</td>
+                                                                    <td style="text-align: left">32</td>
+                                                                    <td style="text-align: left">ES</td>
+                                                                    <td style="text-align: left">320305</td>
+                                                                    <td align="left">JAGUARE</td>
+                                                                                                                                    <td>17</td>
+                                                                <td>0.95%</td>
+                                                                <td>328</td>
+                                                                <td>18.24%</td>
+                                                                <td>556</td>
+                                                                <td>30.92%</td>
+                                                                                                                                    <td>463</td>
+                                                                    <td>25.75%</td>
+                                                                                                                                                                                                    <td>251</td>
+                                                                    <td>13.96%</td>
+                                                                                                                                                                                                    <td>183</td>
+                                                                    <td>10.18%</td>
+                                                                                                                                <td>1.798</td>
+                                                            </tr>
+                                                                                                                        <tr>                                                                    <td style="text-align: left">SUDESTE</td>
+                                                                    <td style="text-align: left">32</td>
+                                                                    <td style="text-align: left">ES</td>
+                                                                    <td style="text-align: left">320310</td>
+                                                                    <td align="left">JERONIMO MONTEIRO</td>
+                                                                                                                                    <td>21</td>
+                                                                <td>1.45%</td>
+                                                                <td>355</td>
+                                                                <td>24.45%</td>
+                                                                <td>412</td>
+                                                                <td>28.37%</td>
+                                                                                                                                    <td>381</td>
+                                                                    <td>26.24%</td>
+                                                                                                                                                                                                    <td>161</td>
+                                                                    <td>11.09%</td>
+                                                                                                                                                                                                    <td>122</td>
+                                                                    <td>8.4%</td>
+                                                                                                                                <td>1.452</td>
+                                                            </tr>
+                                                                                                                        <tr>                                                                    <td style="text-align: left">SUDESTE</td>
+                                                                    <td style="text-align: left">32</td>
+                                                                    <td style="text-align: left">ES</td>
+                                                                    <td style="text-align: left">320313</td>
+                                                                    <td align="left">JOAO NEIVA</td>
+                                                                                                                                    <td>12</td>
+                                                                <td>1.1%</td>
+                                                                <td>240</td>
+                                                                <td>21.96%</td>
+                                                                <td>362</td>
+                                                                <td>33.12%</td>
+                                                                                                                                    <td>284</td>
+                                                                    <td>25.98%</td>
+                                                                                                                                                                                                    <td>134</td>
+                                                                    <td>12.26%</td>
+                                                                                                                                                                                                    <td>61</td>
+                                                                    <td>5.58%</td>
+                                                                                                                                <td>1.093</td>
+                                                            </tr>
+                                                                                                                        <tr>                                                                    <td style="text-align: left">SUDESTE</td>
+                                                                    <td style="text-align: left">32</td>
+                                                                    <td style="text-align: left">ES</td>
+                                                                    <td style="text-align: left">320316</td>
+                                                                    <td align="left">LARANJA DA TERRA</td>
+                                                                                                                                    <td>10</td>
+                                                                <td>1.23%</td>
+                                                                <td>172</td>
+                                                                <td>21.16%</td>
+                                                                <td>279</td>
+                                                                <td>34.32%</td>
+                                                                                                                                    <td>207</td>
+                                                                    <td>25.46%</td>
+                                                                                                                                                                                                    <td>90</td>
+                                                                    <td>11.07%</td>
+                                                                                                                                                                                                    <td>55</td>
+                                                                    <td>6.77%</td>
+                                                                                                                                <td>813</td>
+                                                            </tr>
+                                                                                                                        <tr>                                                                    <td style="text-align: left">SUDESTE</td>
+                                                                    <td style="text-align: left">32</td>
+                                                                    <td style="text-align: left">ES</td>
+                                                                    <td style="text-align: left">320320</td>
+                                                                    <td align="left">LINHARES</td>
+                                                                                                                                    <td>55</td>
+                                                                <td>1.07%</td>
+                                                                <td>989</td>
+                                                                <td>19.24%</td>
+                                                                <td>1.607</td>
+                                                                <td>31.26%</td>
+                                                                                                                                    <td>1.289</td>
+                                                                    <td>25.08%</td>
+                                                                                                                                                                                                    <td>676</td>
+                                                                    <td>13.15%</td>
+                                                                                                                                                                                                    <td>524</td>
+                                                                    <td>10.19%</td>
+                                                                                                                                <td>5.140</td>
+                                                            </tr>
+                                                                                                                        <tr>                                                                    <td style="text-align: left">SUDESTE</td>
+                                                                    <td style="text-align: left">32</td>
+                                                                    <td style="text-align: left">ES</td>
+                                                                    <td style="text-align: left">320330</td>
+                                                                    <td align="left">MANTENOPOLIS</td>
+                                                                                                                                    <td>33</td>
+                                                                <td>1.69%</td>
+                                                                <td>508</td>
+                                                                <td>25.94%</td>
+                                                                <td>610</td>
+                                                                <td>31.15%</td>
+                                                                                                                                    <td>443</td>
+                                                                    <td>22.63%</td>
+                                                                                                                                                                                                    <td>226</td>
+                                                                    <td>11.54%</td>
+                                                                                                                                                                                                    <td>138</td>
+                                                                    <td>7.05%</td>
+                                                                                                                                <td>1.958</td>
+                                                            </tr>
+                                                                                                                        <tr>                                                                    <td style="text-align: left">SUDESTE</td>
+                                                                    <td style="text-align: left">32</td>
+                                                                    <td style="text-align: left">ES</td>
+                                                                    <td style="text-align: left">320332</td>
+                                                                    <td align="left">MARATAIZES</td>
+                                                                                                                                    <td>194</td>
+                                                                <td>1.75%</td>
+                                                                <td>2.799</td>
+                                                                <td>25.31%</td>
+                                                                <td>3.928</td>
+                                                                <td>35.53%</td>
+                                                                                                                                    <td>2.551</td>
+                                                                    <td>23.07%</td>
+                                                                                                                                                                                                    <td>1.031</td>
+                                                                    <td>9.32%</td>
+                                                                                                                                                                                                    <td>554</td>
+                                                                    <td>5.01%</td>
+                                                                                                                                <td>11.057</td>
+                                                            </tr>
+                                                                                                                        <tr>                                                                    <td style="text-align: left">SUDESTE</td>
+                                                                    <td style="text-align: left">32</td>
+                                                                    <td style="text-align: left">ES</td>
+                                                                    <td style="text-align: left">320334</td>
+                                                                    <td align="left">MARECHAL FLORIANO</td>
+                                                                                                                                    <td>43</td>
+                                                                <td>0.92%</td>
+                                                                <td>1.234</td>
+                                                                <td>26.32%</td>
+                                                                <td>1.744</td>
+                                                                <td>37.2%</td>
+                                                                                                                                    <td>1.009</td>
+                                                                    <td>21.52%</td>
+                                                                                                                                                                                                    <td>456</td>
+                                                                    <td>9.73%</td>
+                                                                                                                                                                                                    <td>202</td>
+                                                                    <td>4.31%</td>
+                                                                                                                                <td>4.688</td>
+                                                            </tr>
+                                                                                                                        <tr>                                                                    <td style="text-align: left">SUDESTE</td>
+                                                                    <td style="text-align: left">32</td>
+                                                                    <td style="text-align: left">ES</td>
+                                                                    <td style="text-align: left">320335</td>
+                                                                    <td align="left">MARILANDIA</td>
+                                                                                                                                    <td>18</td>
+                                                                <td>1.43%</td>
+                                                                <td>259</td>
+                                                                <td>20.56%</td>
+                                                                <td>388</td>
+                                                                <td>30.79%</td>
+                                                                                                                                    <td>323</td>
+                                                                    <td>25.63%</td>
+                                                                                                                                                                                                    <td>159</td>
+                                                                    <td>12.62%</td>
+                                                                                                                                                                                                    <td>113</td>
+                                                                    <td>8.97%</td>
+                                                                                                                                <td>1.260</td>
+                                                            </tr>
+                                                                                                                        <tr>                                                                    <td style="text-align: left">SUDESTE</td>
+                                                                    <td style="text-align: left">32</td>
+                                                                    <td style="text-align: left">ES</td>
+                                                                    <td style="text-align: left">320340</td>
+                                                                    <td align="left">MIMOSO DO SUL</td>
+                                                                                                                                    <td>25</td>
+                                                                <td>2.13%</td>
+                                                                <td>313</td>
+                                                                <td>26.62%</td>
+                                                                <td>370</td>
+                                                                <td>31.46%</td>
+                                                                                                                                    <td>265</td>
+                                                                    <td>22.53%</td>
+                                                                                                                                                                                                    <td>119</td>
+                                                                    <td>10.12%</td>
+                                                                                                                                                                                                    <td>84</td>
+                                                                    <td>7.14%</td>
+                                                                                                                                <td>1.176</td>
+                                                            </tr>
+                                                                                                                        <tr>                                                                    <td style="text-align: left">SUDESTE</td>
+                                                                    <td style="text-align: left">32</td>
+                                                                    <td style="text-align: left">ES</td>
+                                                                    <td style="text-align: left">320350</td>
+                                                                    <td align="left">MONTANHA</td>
+                                                                                                                                    <td>76</td>
+                                                                <td>1.6%</td>
+                                                                <td>1.287</td>
+                                                                <td>27.04%</td>
+                                                                <td>1.625</td>
+                                                                <td>34.14%</td>
+                                                                                                                                    <td>1.075</td>
+                                                                    <td>22.58%</td>
+                                                                                                                                                                                                    <td>462</td>
+                                                                    <td>9.71%</td>
+                                                                                                                                                                                                    <td>235</td>
+                                                                    <td>4.94%</td>
+                                                                                                                                <td>4.760</td>
+                                                            </tr>
+                                                                                                                        <tr>                                                                    <td style="text-align: left">SUDESTE</td>
+                                                                    <td style="text-align: left">32</td>
+                                                                    <td style="text-align: left">ES</td>
+                                                                    <td style="text-align: left">320360</td>
+                                                                    <td align="left">MUCURICI</td>
+                                                                                                                                    <td>34</td>
+                                                                <td>1.85%</td>
+                                                                <td>502</td>
+                                                                <td>27.28%</td>
+                                                                <td>648</td>
+                                                                <td>35.22%</td>
+                                                                                                                                    <td>413</td>
+                                                                    <td>22.45%</td>
+                                                                                                                                                                                                    <td>162</td>
+                                                                    <td>8.8%</td>
+                                                                                                                                                                                                    <td>81</td>
+                                                                    <td>4.4%</td>
+                                                                                                                                <td>1.840</td>
+                                                            </tr>
+                                                                                                                        <tr>                                                                    <td style="text-align: left">SUDESTE</td>
+                                                                    <td style="text-align: left">32</td>
+                                                                    <td style="text-align: left">ES</td>
+                                                                    <td style="text-align: left">320370</td>
+                                                                    <td align="left">MUNIZ FREIRE</td>
+                                                                                                                                    <td>32</td>
+                                                                <td>1.35%</td>
+                                                                <td>645</td>
+                                                                <td>27.22%</td>
+                                                                <td>810</td>
+                                                                <td>34.18%</td>
+                                                                                                                                    <td>517</td>
+                                                                    <td>21.81%</td>
+                                                                                                                                                                                                    <td>257</td>
+                                                                    <td>10.84%</td>
+                                                                                                                                                                                                    <td>109</td>
+                                                                    <td>4.6%</td>
+                                                                                                                                <td>2.370</td>
+                                                            </tr>
+                                                                                                                        <tr>                                                                    <td style="text-align: left">SUDESTE</td>
+                                                                    <td style="text-align: left">32</td>
+                                                                    <td style="text-align: left">ES</td>
+                                                                    <td style="text-align: left">320380</td>
+                                                                    <td align="left">MUQUI</td>
+                                                                                                                                    <td>23</td>
+                                                                <td>1.39%</td>
+                                                                <td>373</td>
+                                                                <td>22.55%</td>
+                                                                <td>531</td>
+                                                                <td>32.1%</td>
+                                                                                                                                    <td>432</td>
+                                                                    <td>26.12%</td>
+                                                                                                                                                                                                    <td>187</td>
+                                                                    <td>11.31%</td>
+                                                                                                                                                                                                    <td>108</td>
+                                                                    <td>6.53%</td>
+                                                                                                                                <td>1.654</td>
+                                                            </tr>
+                                                                                                                        <tr>                                                                    <td style="text-align: left">SUDESTE</td>
+                                                                    <td style="text-align: left">32</td>
+                                                                    <td style="text-align: left">ES</td>
+                                                                    <td style="text-align: left">320390</td>
+                                                                    <td align="left">NOVA VENECIA</td>
+                                                                                                                                    <td>31</td>
+                                                                <td>1.42%</td>
+                                                                <td>553</td>
+                                                                <td>25.31%</td>
+                                                                <td>649</td>
+                                                                <td>29.7%</td>
+                                                                                                                                    <td>534</td>
+                                                                    <td>24.44%</td>
+                                                                                                                                                                                                    <td>265</td>
+                                                                    <td>12.13%</td>
+                                                                                                                                                                                                    <td>153</td>
+                                                                    <td>7%</td>
+                                                                                                                                <td>2.185</td>
+                                                            </tr>
+                                                                                                                        <tr>                                                                    <td style="text-align: left">SUDESTE</td>
+                                                                    <td style="text-align: left">32</td>
+                                                                    <td style="text-align: left">ES</td>
+                                                                    <td style="text-align: left">320400</td>
+                                                                    <td align="left">PANCAS</td>
+                                                                                                                                    <td>95</td>
+                                                                <td>2.36%</td>
+                                                                <td>1.245</td>
+                                                                <td>30.87%</td>
+                                                                <td>1.280</td>
+                                                                <td>31.74%</td>
+                                                                                                                                    <td>854</td>
+                                                                    <td>21.18%</td>
+                                                                                                                                                                                                    <td>373</td>
+                                                                    <td>9.25%</td>
+                                                                                                                                                                                                    <td>186</td>
+                                                                    <td>4.61%</td>
+                                                                                                                                <td>4.033</td>
+                                                            </tr>
+                                                                                                                        <tr>                                                                    <td style="text-align: left">SUDESTE</td>
+                                                                    <td style="text-align: left">32</td>
+                                                                    <td style="text-align: left">ES</td>
+                                                                    <td style="text-align: left">320405</td>
+                                                                    <td align="left">PEDRO CANARIO</td>
+                                                                                                                                    <td>27</td>
+                                                                <td>2.05%</td>
+                                                                <td>342</td>
+                                                                <td>25.99%</td>
+                                                                <td>417</td>
+                                                                <td>31.69%</td>
+                                                                                                                                    <td>300</td>
+                                                                    <td>22.8%</td>
+                                                                                                                                                                                                    <td>144</td>
+                                                                    <td>10.94%</td>
+                                                                                                                                                                                                    <td>86</td>
+                                                                    <td>6.53%</td>
+                                                                                                                                <td>1.316</td>
+                                                            </tr>
+                                                                                                                        <tr>                                                                    <td style="text-align: left">SUDESTE</td>
+                                                                    <td style="text-align: left">32</td>
+                                                                    <td style="text-align: left">ES</td>
+                                                                    <td style="text-align: left">320410</td>
+                                                                    <td align="left">PINHEIROS</td>
+                                                                                                                                    <td>30</td>
+                                                                <td>1.89%</td>
+                                                                <td>363</td>
+                                                                <td>22.89%</td>
+                                                                <td>491</td>
+                                                                <td>30.96%</td>
+                                                                                                                                    <td>378</td>
+                                                                    <td>23.83%</td>
+                                                                                                                                                                                                    <td>203</td>
+                                                                    <td>12.8%</td>
+                                                                                                                                                                                                    <td>121</td>
+                                                                    <td>7.63%</td>
+                                                                                                                                <td>1.586</td>
+                                                            </tr>
+                                                                                                                        <tr>                                                                    <td style="text-align: left">SUDESTE</td>
+                                                                    <td style="text-align: left">32</td>
+                                                                    <td style="text-align: left">ES</td>
+                                                                    <td style="text-align: left">320420</td>
+                                                                    <td align="left">PIUMA</td>
+                                                                                                                                    <td>18</td>
+                                                                <td>1.92%</td>
+                                                                <td>249</td>
+                                                                <td>26.55%</td>
+                                                                <td>298</td>
+                                                                <td>31.77%</td>
+                                                                                                                                    <td>210</td>
+                                                                    <td>22.39%</td>
+                                                                                                                                                                                                    <td>103</td>
+                                                                    <td>10.98%</td>
+                                                                                                                                                                                                    <td>60</td>
+                                                                    <td>6.4%</td>
+                                                                                                                                <td>938</td>
+                                                            </tr>
+                                                                                                                        <tr>                                                                    <td style="text-align: left">SUDESTE</td>
+                                                                    <td style="text-align: left">32</td>
+                                                                    <td style="text-align: left">ES</td>
+                                                                    <td style="text-align: left">320425</td>
+                                                                    <td align="left">PONTO BELO</td>
+                                                                                                                                    <td>9</td>
+                                                                <td>1.19%</td>
+                                                                <td>171</td>
+                                                                <td>22.53%</td>
+                                                                <td>277</td>
+                                                                <td>36.5%</td>
+                                                                                                                                    <td>177</td>
+                                                                    <td>23.32%</td>
+                                                                                                                                                                                                    <td>79</td>
+                                                                    <td>10.41%</td>
+                                                                                                                                                                                                    <td>46</td>
+                                                                    <td>6.06%</td>
+                                                                                                                                <td>759</td>
+                                                            </tr>
+                                                                                                                        <tr>                                                                    <td style="text-align: left">SUDESTE</td>
+                                                                    <td style="text-align: left">32</td>
+                                                                    <td style="text-align: left">ES</td>
+                                                                    <td style="text-align: left">320430</td>
+                                                                    <td align="left">PRESIDENTE KENNEDY</td>
+                                                                                                                                    <td>43</td>
+                                                                <td>1.29%</td>
+                                                                <td>672</td>
+                                                                <td>20.14%</td>
+                                                                <td>1.032</td>
+                                                                <td>30.93%</td>
+                                                                                                                                    <td>891</td>
+                                                                    <td>26.7%</td>
+                                                                                                                                                                                                    <td>450</td>
+                                                                    <td>13.49%</td>
+                                                                                                                                                                                                    <td>249</td>
+                                                                    <td>7.46%</td>
+                                                                                                                                <td>3.337</td>
+                                                            </tr>
+                                                                                                                        <tr>                                                                    <td style="text-align: left">SUDESTE</td>
+                                                                    <td style="text-align: left">32</td>
+                                                                    <td style="text-align: left">ES</td>
+                                                                    <td style="text-align: left">320435</td>
+                                                                    <td align="left">RIO BANANAL</td>
+                                                                                                                                    <td>92</td>
+                                                                <td>1.22%</td>
+                                                                <td>2.227</td>
+                                                                <td>29.65%</td>
+                                                                <td>2.716</td>
+                                                                <td>36.16%</td>
+                                                                                                                                    <td>1.582</td>
+                                                                    <td>21.06%</td>
+                                                                                                                                                                                                    <td>614</td>
+                                                                    <td>8.17%</td>
+                                                                                                                                                                                                    <td>280</td>
+                                                                    <td>3.73%</td>
+                                                                                                                                <td>7.511</td>
+                                                            </tr>
+                                                                                                                        <tr>                                                                    <td style="text-align: left">SUDESTE</td>
+                                                                    <td style="text-align: left">32</td>
+                                                                    <td style="text-align: left">ES</td>
+                                                                    <td style="text-align: left">320440</td>
+                                                                    <td align="left">RIO NOVO DO SUL</td>
+                                                                                                                                    <td>54</td>
+                                                                <td>1.54%</td>
+                                                                <td>1.042</td>
+                                                                <td>29.63%</td>
+                                                                <td>1.253</td>
+                                                                <td>35.63%</td>
+                                                                                                                                    <td>746</td>
+                                                                    <td>21.21%</td>
+                                                                                                                                                                                                    <td>266</td>
+                                                                    <td>7.56%</td>
+                                                                                                                                                                                                    <td>156</td>
+                                                                    <td>4.44%</td>
+                                                                                                                                <td>3.517</td>
+                                                            </tr>
+                                                                                                                        <tr>                                                                    <td style="text-align: left">SUDESTE</td>
+                                                                    <td style="text-align: left">32</td>
+                                                                    <td style="text-align: left">ES</td>
+                                                                    <td style="text-align: left">320450</td>
+                                                                    <td align="left">SANTA LEOPOLDINA</td>
+                                                                                                                                    <td>14</td>
+                                                                <td>2.19%</td>
+                                                                <td>171</td>
+                                                                <td>26.8%</td>
+                                                                <td>206</td>
+                                                                <td>32.29%</td>
+                                                                                                                                    <td>163</td>
+                                                                    <td>25.55%</td>
+                                                                                                                                                                                                    <td>63</td>
+                                                                    <td>9.87%</td>
+                                                                                                                                                                                                    <td>21</td>
+                                                                    <td>3.29%</td>
+                                                                                                                                <td>638</td>
+                                                            </tr>
+                                                                                                                        <tr>                                                                    <td style="text-align: left">SUDESTE</td>
+                                                                    <td style="text-align: left">32</td>
+                                                                    <td style="text-align: left">ES</td>
+                                                                    <td style="text-align: left">320455</td>
+                                                                    <td align="left">SANTA MARIA DE JETIBA</td>
+                                                                                                                                    <td>30</td>
+                                                                <td>1.45%</td>
+                                                                <td>495</td>
+                                                                <td>23.87%</td>
+                                                                <td>732</td>
+                                                                <td>35.29%</td>
+                                                                                                                                    <td>485</td>
+                                                                    <td>23.38%</td>
+                                                                                                                                                                                                    <td>204</td>
+                                                                    <td>9.84%</td>
+                                                                                                                                                                                                    <td>128</td>
+                                                                    <td>6.17%</td>
+                                                                                                                                <td>2.074</td>
+                                                            </tr>
+                                                                                                                        <tr>                                                                    <td style="text-align: left">SUDESTE</td>
+                                                                    <td style="text-align: left">32</td>
+                                                                    <td style="text-align: left">ES</td>
+                                                                    <td style="text-align: left">320460</td>
+                                                                    <td align="left">SANTA TERESA</td>
+                                                                                                                                    <td>7</td>
+                                                                <td>1.01%</td>
+                                                                <td>134</td>
+                                                                <td>19.31%</td>
+                                                                <td>227</td>
+                                                                <td>32.71%</td>
+                                                                                                                                    <td>174</td>
+                                                                    <td>25.07%</td>
+                                                                                                                                                                                                    <td>88</td>
+                                                                    <td>12.68%</td>
+                                                                                                                                                                                                    <td>64</td>
+                                                                    <td>9.22%</td>
+                                                                                                                                <td>694</td>
+                                                            </tr>
+                                                                                                                        <tr>                                                                    <td style="text-align: left">SUDESTE</td>
+                                                                    <td style="text-align: left">32</td>
+                                                                    <td style="text-align: left">ES</td>
+                                                                    <td style="text-align: left">320465</td>
+                                                                    <td align="left">SAO DOMINGOS DO NORTE</td>
+                                                                                                                                    <td>12</td>
+                                                                <td>1.41%</td>
+                                                                <td>254</td>
+                                                                <td>29.92%</td>
+                                                                <td>292</td>
+                                                                <td>34.39%</td>
+                                                                                                                                    <td>161</td>
+                                                                    <td>18.96%</td>
+                                                                                                                                                                                                    <td>93</td>
+                                                                    <td>10.95%</td>
+                                                                                                                                                                                                    <td>37</td>
+                                                                    <td>4.36%</td>
+                                                                                                                                <td>849</td>
+                                                            </tr>
+                                                                                                                        <tr>                                                                    <td style="text-align: left">SUDESTE</td>
+                                                                    <td style="text-align: left">32</td>
+                                                                    <td style="text-align: left">ES</td>
+                                                                    <td style="text-align: left">320470</td>
+                                                                    <td align="left">SAO GABRIEL DA PALHA</td>
+                                                                                                                                    <td>29</td>
+                                                                <td>1.43%</td>
+                                                                <td>516</td>
+                                                                <td>25.44%</td>
+                                                                <td>716</td>
+                                                                <td>35.31%</td>
+                                                                                                                                    <td>435</td>
+                                                                    <td>21.45%</td>
+                                                                                                                                                                                                    <td>203</td>
+                                                                    <td>10.01%</td>
+                                                                                                                                                                                                    <td>129</td>
+                                                                    <td>6.36%</td>
+                                                                                                                                <td>2.028</td>
+                                                            </tr>
+                                                                                                                        <tr>                                                                    <td style="text-align: left">SUDESTE</td>
+                                                                    <td style="text-align: left">32</td>
+                                                                    <td style="text-align: left">ES</td>
+                                                                    <td style="text-align: left">320480</td>
+                                                                    <td align="left">SAO JOSE DO CALCADO</td>
+                                                                                                                                    <td>24</td>
+                                                                <td>2.39%</td>
+                                                                <td>330</td>
+                                                                <td>32.8%</td>
+                                                                <td>333</td>
+                                                                <td>33.1%</td>
+                                                                                                                                    <td>186</td>
+                                                                    <td>18.49%</td>
+                                                                                                                                                                                                    <td>83</td>
+                                                                    <td>8.25%</td>
+                                                                                                                                                                                                    <td>50</td>
+                                                                    <td>4.97%</td>
+                                                                                                                                <td>1.006</td>
+                                                            </tr>
+                                                                                                                        <tr>                                                                    <td style="text-align: left">SUDESTE</td>
+                                                                    <td style="text-align: left">32</td>
+                                                                    <td style="text-align: left">ES</td>
+                                                                    <td style="text-align: left">320490</td>
+                                                                    <td align="left">SAO MATEUS</td>
+                                                                                                                                    <td>309</td>
+                                                                <td>1.72%</td>
+                                                                <td>4.487</td>
+                                                                <td>24.99%</td>
+                                                                <td>5.862</td>
+                                                                <td>32.65%</td>
+                                                                                                                                    <td>4.310</td>
+                                                                    <td>24.01%</td>
+                                                                                                                                                                                                    <td>1.912</td>
+                                                                    <td>10.65%</td>
+                                                                                                                                                                                                    <td>1.074</td>
+                                                                    <td>5.98%</td>
+                                                                                                                                <td>17.954</td>
+                                                            </tr>
+                                                                                                                        <tr>                                                                    <td style="text-align: left">SUDESTE</td>
+                                                                    <td style="text-align: left">32</td>
+                                                                    <td style="text-align: left">ES</td>
+                                                                    <td style="text-align: left">320495</td>
+                                                                    <td align="left">SAO ROQUE DO CANAA</td>
+                                                                                                                                    <td>37</td>
+                                                                <td>1.37%</td>
+                                                                <td>738</td>
+                                                                <td>27.32%</td>
+                                                                <td>967</td>
+                                                                <td>35.8%</td>
+                                                                                                                                    <td>599</td>
+                                                                    <td>22.18%</td>
+                                                                                                                                                                                                    <td>242</td>
+                                                                    <td>8.96%</td>
+                                                                                                                                                                                                    <td>118</td>
+                                                                    <td>4.37%</td>
+                                                                                                                                <td>2.701</td>
+                                                            </tr>
+                                                                                                                        <tr>                                                                    <td style="text-align: left">SUDESTE</td>
+                                                                    <td style="text-align: left">32</td>
+                                                                    <td style="text-align: left">ES</td>
+                                                                    <td style="text-align: left">320500</td>
+                                                                    <td align="left">SERRA</td>
+                                                                                                                                    <td>1.074</td>
+                                                                <td>1.86%</td>
+                                                                <td>13.829</td>
+                                                                <td>23.99%</td>
+                                                                <td>18.438</td>
+                                                                <td>31.98%</td>
+                                                                                                                                    <td>13.717</td>
+                                                                    <td>23.79%</td>
+                                                                                                                                                                                                    <td>6.646</td>
+                                                                    <td>11.53%</td>
+                                                                                                                                                                                                    <td>3.952</td>
+                                                                    <td>6.85%</td>
+                                                                                                                                <td>57.656</td>
+                                                            </tr>
+                                                                                                                        <tr>                                                                    <td style="text-align: left">SUDESTE</td>
+                                                                    <td style="text-align: left">32</td>
+                                                                    <td style="text-align: left">ES</td>
+                                                                    <td style="text-align: left">320501</td>
+                                                                    <td align="left">SOORETAMA</td>
+                                                                                                                                    <td>19</td>
+                                                                <td>1.69%</td>
+                                                                <td>260</td>
+                                                                <td>23.19%</td>
+                                                                <td>381</td>
+                                                                <td>33.99%</td>
+                                                                                                                                    <td>269</td>
+                                                                    <td>24%</td>
+                                                                                                                                                                                                    <td>108</td>
+                                                                    <td>9.63%</td>
+                                                                                                                                                                                                    <td>84</td>
+                                                                    <td>7.49%</td>
+                                                                                                                                <td>1.121</td>
+                                                            </tr>
+                                                                                                                        <tr>                                                                    <td style="text-align: left">SUDESTE</td>
+                                                                    <td style="text-align: left">32</td>
+                                                                    <td style="text-align: left">ES</td>
+                                                                    <td style="text-align: left">320503</td>
+                                                                    <td align="left">VARGEM ALTA</td>
+                                                                                                                                    <td>13</td>
+                                                                <td>1.42%</td>
+                                                                <td>189</td>
+                                                                <td>20.7%</td>
+                                                                <td>310</td>
+                                                                <td>33.95%</td>
+                                                                                                                                    <td>216</td>
+                                                                    <td>23.66%</td>
+                                                                                                                                                                                                    <td>119</td>
+                                                                    <td>13.03%</td>
+                                                                                                                                                                                                    <td>66</td>
+                                                                    <td>7.23%</td>
+                                                                                                                                <td>913</td>
+                                                            </tr>
+                                                                                                                        <tr>                                                                    <td style="text-align: left">SUDESTE</td>
+                                                                    <td style="text-align: left">32</td>
+                                                                    <td style="text-align: left">ES</td>
+                                                                    <td style="text-align: left">320506</td>
+                                                                    <td align="left">VENDA NOVA DO IMIGRANTE</td>
+                                                                                                                                    <td>19</td>
+                                                                <td>1.17%</td>
+                                                                <td>339</td>
+                                                                <td>20.81%</td>
+                                                                <td>505</td>
+                                                                <td>31%</td>
+                                                                                                                                    <td>431</td>
+                                                                    <td>26.46%</td>
+                                                                                                                                                                                                    <td>214</td>
+                                                                    <td>13.14%</td>
+                                                                                                                                                                                                    <td>121</td>
+                                                                    <td>7.43%</td>
+                                                                                                                                <td>1.629</td>
+                                                            </tr>
+                                                                                                                        <tr>                                                                    <td style="text-align: left">SUDESTE</td>
+                                                                    <td style="text-align: left">32</td>
+                                                                    <td style="text-align: left">ES</td>
+                                                                    <td style="text-align: left">320510</td>
+                                                                    <td align="left">VIANA</td>
+                                                                                                                                    <td>37</td>
+                                                                <td>1.88%</td>
+                                                                <td>454</td>
+                                                                <td>23.09%</td>
+                                                                <td>600</td>
+                                                                <td>30.52%</td>
+                                                                                                                                    <td>477</td>
+                                                                    <td>24.26%</td>
+                                                                                                                                                                                                    <td>244</td>
+                                                                    <td>12.41%</td>
+                                                                                                                                                                                                    <td>154</td>
+                                                                    <td>7.83%</td>
+                                                                                                                                <td>1.966</td>
+                                                            </tr>
+                                                                                                                        <tr>                                                                    <td style="text-align: left">SUDESTE</td>
+                                                                    <td style="text-align: left">32</td>
+                                                                    <td style="text-align: left">ES</td>
+                                                                    <td style="text-align: left">320515</td>
+                                                                    <td align="left">VILA PAVAO</td>
+                                                                                                                                    <td>9</td>
+                                                                <td>0.98%</td>
+                                                                <td>237</td>
+                                                                <td>25.87%</td>
+                                                                <td>320</td>
+                                                                <td>34.93%</td>
+                                                                                                                                    <td>217</td>
+                                                                    <td>23.69%</td>
+                                                                                                                                                                                                    <td>85</td>
+                                                                    <td>9.28%</td>
+                                                                                                                                                                                                    <td>48</td>
+                                                                    <td>5.24%</td>
+                                                                                                                                <td>916</td>
+                                                            </tr>
+                                                                                                                        <tr>                                                                    <td style="text-align: left">SUDESTE</td>
+                                                                    <td style="text-align: left">32</td>
+                                                                    <td style="text-align: left">ES</td>
+                                                                    <td style="text-align: left">320517</td>
+                                                                    <td align="left">VILA VALERIO</td>
+                                                                                                                                    <td>10</td>
+                                                                <td>1.53%</td>
+                                                                <td>166</td>
+                                                                <td>25.46%</td>
+                                                                <td>188</td>
+                                                                <td>28.83%</td>
+                                                                                                                                    <td>178</td>
+                                                                    <td>27.3%</td>
+                                                                                                                                                                                                    <td>69</td>
+                                                                    <td>10.58%</td>
+                                                                                                                                                                                                    <td>41</td>
+                                                                    <td>6.29%</td>
+                                                                                                                                <td>652</td>
+                                                            </tr>
+                                                                                                                        <tr>                                                                    <td style="text-align: left">SUDESTE</td>
+                                                                    <td style="text-align: left">32</td>
+                                                                    <td style="text-align: left">ES</td>
+                                                                    <td style="text-align: left">320520</td>
+                                                                    <td align="left">VILA VELHA</td>
+                                                                                                                                    <td>664</td>
+                                                                <td>1.72%</td>
+                                                                <td>9.394</td>
+                                                                <td>24.4%</td>
+                                                                <td>12.410</td>
+                                                                <td>32.24%</td>
+                                                                                                                                    <td>9.045</td>
+                                                                    <td>23.49%</td>
+                                                                                                                                                                                                    <td>4.292</td>
+                                                                    <td>11.15%</td>
+                                                                                                                                                                                                    <td>2.693</td>
+                                                                    <td>7%</td>
+                                                                                                                                <td>38.498</td>
+                                                            </tr>
+                                                                                                                        <tr>                                                                    <td style="text-align: left">SUDESTE</td>
+                                                                    <td style="text-align: left">32</td>
+                                                                    <td style="text-align: left">ES</td>
+                                                                    <td style="text-align: left">320530</td>
+                                                                    <td align="left">VITORIA</td>
+                                                                                                                                    <td>2.781</td>
+                                                                <td>2.75%</td>
+                                                                <td>30.935</td>
+                                                                <td>30.62%</td>
+                                                                <td>33.034</td>
+                                                                <td>32.7%</td>
+                                                                                                                                    <td>20.563</td>
+                                                                    <td>20.35%</td>
+                                                                                                                                                                                                    <td>8.805</td>
+                                                                    <td>8.72%</td>
+                                                                                                                                                                                                    <td>4.910</td>
+                                                                    <td>4.86%</td>
+                                                                                                                                <td>101.028</td>
+                                                            </tr>
+                                                                                                                <tr style="border: 2px solid #AAAAAA!important; font-weight: bold">
+                                                                                                                    <td style="text-align: left" colspan="5">TOTAL ESTADO ESPÍRITO SANTO</td>
+                                                                                                                    <td>9.268</td>
+                                                        <td>1.94%</td>
+                                                        <td>126.154</td>
+                                                        <td>26.37%</td>
+                                                        <td>156.924</td>
+                                                        <td>32.8%</td>
+                                                                                                                    <td>108.205</td>
+                                                            <td>22.62%</td>
+                                                                                                                                                                            <td>49.191</td>
+                                                            <td>10.28%</td>
+                                                                                                                                                                            <td>28.688</td>
+                                                            <td>6%</td>
+                                                                                                                <td>478.430</td>
+                                                    </tr>
+                                                                                            <tr style="border: 2px solid #AAAAAA!important; font-weight: bold">
+                                            <!--<td style="text-align: left">3</td>-->
+                                            <td style="text-align: left" colspan="5">
+                                                TOTAL REGI&Atilde;O SUDESTE                                            </td>
+                                            <td>194.635</td>
+                                            <td>1.83%</td>
+                                            <td>2.810.805</td>
+                                            <td>26.46%</td>
+                                            <td>3.535.647</td>
+                                            <td>33.29%</td>
+                                                                                            <td>2.372.923</td>
+                                                <td>22.34%</td>
+                                                                                                                                        <td>1.064.855</td>
+                                                <td>10.02%</td>
+                                                                                                                                        <td>643.256</td>
+                                                <td>6.06%</td>
+                                                                                        <td>10.622.121</td>
+                                        </tr>
+                                                                        <tr style="border:2px solid #AAAAAA !important; font-weight: bold">
+                                    <td style="text-align: left" colspan="5">
+                                        TOTAL BRASIL
+                                    </td>
+                                    <td>576.678</td>
+                                    <td>1.82%</td>
+                                    <td>8.667.660</td>
+                                    <td>27.36%</td>
+                                    <td>10.984.955</td>
+                                    <td>34.67%</td>
+                                                                            <td>7.009.771</td>
+                                        <td>22.13%</td>
+                                                                                                                <td>2.891.547</td>
+                                        <td>9.13%</td>
+                                                                                                                <td>1.551.443</td>
+                                        <td>4.9%</td>
+                                                                        <td>31.682.054</td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                        <br />
+                                            </div>
+                    <br />
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+</div><!-- ./wrapper -->
+<!--######################RODAPE#####################->
+<!-- Main Footer -->
+<footer class="main-footer">
+    <!-- To the right -->
+    <div class="pull-right hidden-xs">
+        Versão 3.2
+    </div>
+    <!-- Default to the left -->
+    <strong>Ministério da Saúde &copy; 2026. <a href="http://aps.saude.gov.br/" target="_blank">Secretaria de Atenção Primária à Saúde</a></strong>
+</footer>
+
+
+<!-- Add the sidebar's background. This div must be placed
+     immediately after the control sidebar -->
+<div class='control-sidebar-bg'></div>
+
+<!-- REQUIRED JS SCRIPTS -->
+
+<!-- Bootstrap 3.3.2 JS -->
+<script src="/sisvan/public/js/bootstrap.min.js" type="text/javascript"></script>
+
+<!-- Bootbox -->
+<script src="/sisvan/public/js/bootbox.min.js" type="text/javascript"></script>
+<!-- AdminLTE App -->
+<script src="/sisvan/public/js/app.min.js" type="text/javascript"></script>
+<!-- Datatables -->
+<script src="/sisvan/public/js/plugins/datatables/jquery.dataTables.min.js" type="text/javascript"></script>
+<script src="/sisvan/public/js/plugins/datatables/dataTables.bootstrap.min.js" type="text/javascript"></script>
+<!-- highcharts GRÁFICOS -->
+<script src="/sisvan/public/js/highcharts/highcharts.js" type="text/javascript"></script>
+<script src="/sisvan/public/js/highcharts/modules/exporting.js" type="text/javascript"></script>
+
+<!-- SELECTS  -->
+<script src="/sisvan/public/js/bootstrap-select.js"></script>
+
+
+
+<script type="text/javascript">
+    var table = $('.dtPagina')
+        .dataTable(
+            {
+                "oLanguage": {
+                    "sProcessing": "Aguarde enquanto os dados são carregados ...",
+                    "sLengthMenu": "Mostrar _MENU_ registros por pagina",
+                    "sZeroRecords": "Nenhum registro correspondente ao criterio encontrado",
+                    "sInfoEmtpy": "Exibindo 0 a 0 de 0 registros",
+                    "sInfo": "Exibindo de _START_ a _END_ de _TOTAL_ registros",
+                    "sInfoFiltered": "",
+                    "sSearch": "Procurar: ",
+                    "oPaginate": {
+                        "sFirst": "Primeiro",
+                        "sPrevious": "Anterior",
+                        "sNext": "Próximo",
+                        "sLast": "Último"
+                    }
+                },
+
+                "sScrollX": '99%',
+                "lengthMenu": [[5, 10, 25, 50, -1], [5, 10, 25, 50]],
+                "ordering": false
+            });
+
+
+    var table = $('.dtAgrupador')
+        .dataTable(
+            {
+                "oLanguage": {
+                    "sProcessing": "Aguarde enquanto os dados são carregados ...",
+                    "sLengthMenu": "Mostrar _MENU_ registros por pagina",
+                    "sZeroRecords": "Nenhum registro correspondente ao criterio encontrado",
+                    "sInfoEmtpy": "Exibindo 0 a 0 de 0 registros",
+                    "sInfo": "Exibindo de _START_ a _END_ de _TOTAL_ registros",
+                    "sInfoFiltered": "",
+                    "sSearch": "Procurar: ",
+                    "oPaginate": {
+                        "sFirst": "Primeiro",
+                        "sPrevious": "Anterior",
+                        "sNext": "Próximo",
+                        "sLast": "Último"
+                    }
+                },
+
+                "sScrollX": '99%',
+                "lengthMenu": [[51], []],
+                "ordering": false
+            });
+</script>
+
+
+</body>
+</html>
